@@ -1,4 +1,5 @@
 # coding: utf8
+
 '''
 combination implementation
 '''
@@ -19,11 +20,11 @@ def recursion():
 	n = 2
 	def combination(l, n):
 		if n == 0:
-			return [[]]
+			return [()]
 		r = []
 		for i, v in enumerate(l):
 			for j in combination(l[i+1:], n-1):
-				r.append([v]+j)
+				r.append( (v,) + j )
 		#print '\t' * n, n, 'of', l, '=', r
 		return r
 	print combination(l, n)
